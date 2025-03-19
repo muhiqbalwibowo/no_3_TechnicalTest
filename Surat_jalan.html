@@ -1,0 +1,238 @@
+<div class="container">
+  <h2>Surat Jalan</h2>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="d-flex justify-content-between">
+        <h4>Buat Surat Jalan Baru</h4>
+        <button class="btn btn-primary">+ Tambah SJ</button>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <form>
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label>No. Surat Jalan</label>
+            <input
+              type="text"
+              class="form-control"
+              value="SJ-20250320-001"
+              readonly
+            />
+          </div>
+          <div class="col-md-4">
+            <label>Tanggal</label>
+            <input type="date" class="form-control" value="2025-03-20" />
+          </div>
+          <div class="col-md-4">
+            <label>Referensi Purchase Order</label>
+            <select class="form-control">
+              <option>-- Pilih PO --</option>
+              <option selected>PO-20250320-001</option>
+              <option>PO-20250318-002</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label>Supplier</label>
+            <input
+              type="text"
+              class="form-control"
+              value="PT. Sembako Jaya"
+              readonly
+            />
+          </div>
+          <div class="col-md-6">
+            <label>Status Verifikasi</label>
+            <select class="form-control">
+              <option>Belum Diverifikasi</option>
+              <option>Valid</option>
+              <option>Ada Item Tidak Valid</option>
+            </select>
+          </div>
+        </div>
+
+        <h5 class="mt-4">Item Kiriman</h5>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama Produk</th>
+              <th>Jumlah PO</th>
+              <th>Jumlah Kirim</th>
+              <th>Satuan</th>
+              <th>Status</th>
+              <th>Catatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Beras Cap Panda 5kg</td>
+              <td>10</td>
+              <td><input type="number" class="form-control" value="10" /></td>
+              <td>Karung</td>
+              <td>
+                <select class="form-control">
+                  <option>Belum Diperiksa</option>
+                  <option selected>Valid</option>
+                  <option>Tidak Valid</option>
+                </select>
+              </td>
+              <td>
+                <input type="text" class="form-control" placeholder="Catatan" />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Gula Pasir 1kg</td>
+              <td>20</td>
+              <td><input type="number" class="form-control" value="15" /></td>
+              <td>Kg</td>
+              <td>
+                <select class="form-control">
+                  <option>Belum Diperiksa</option>
+                  <option>Valid</option>
+                  <option selected>Tidak Valid</option>
+                </select>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  class="form-control"
+                  value="Kemasan rusak 5 item"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <label>Catatan Verifikasi</label>
+            <textarea
+              class="form-control"
+              rows="3"
+              placeholder="Masukkan catatan verifikasi jika ada"
+            >
+Terdapat 5 kemasan gula yang rusak, mohon diganti pada pengiriman berikutnya.</textarea
+            >
+          </div>
+        </div>
+
+        <div class="text-right mt-3">
+          <button type="button" class="btn btn-secondary">Simpan</button>
+          <button type="button" class="btn btn-success">
+            Verifikasi & Selesai
+          </button>
+          <button type="button" class="btn btn-primary">
+            Cetak Surat Jalan
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card mt-4">
+    <div class="card-header">
+      <h4>Daftar Surat Jalan</h4>
+    </div>
+    <div class="card-body">
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Cari No. SJ / PO"
+          />
+        </div>
+        <div class="col-md-3">
+          <select class="form-control">
+            <option>Semua Supplier</option>
+            <option>PT. Sembako Jaya</option>
+            <option>UD. Maju Bersama</option>
+            <option>CV. Prima Niaga</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-control">
+            <option>Semua Status</option>
+            <option>Belum Diverifikasi</option>
+            <option>Valid</option>
+            <option>Ada Item Tidak Valid</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-primary btn-block">Cari</button>
+        </div>
+      </div>
+
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>No. SJ</th>
+            <th>Tanggal</th>
+            <th>No. PO</th>
+            <th>Supplier</th>
+            <th>Status Verifikasi</th>
+            <th>Admin</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SJ-20250320-001</td>
+            <td>20/03/2025</td>
+            <td>PO-20250320-001</td>
+            <td>PT. Sembako Jaya</td>
+            <td>
+              <span class="badge badge-warning">Ada Item Tidak Valid</span>
+            </td>
+            <td>Budi Santoso</td>
+            <td>
+              <button class="btn btn-sm btn-info">Lihat</button>
+              <button class="btn btn-sm btn-warning">Edit</button>
+              <button class="btn btn-sm btn-secondary">Cetak</button>
+            </td>
+          </tr>
+          <tr>
+            <td>SJ-20250318-002</td>
+            <td>18/03/2025</td>
+            <td>PO-20250318-002</td>
+            <td>UD. Maju Bersama</td>
+            <td><span class="badge badge-success">Valid</span></td>
+            <td>Ani Wijaya</td>
+            <td>
+              <button class="btn btn-sm btn-info">Lihat</button>
+              <button class="btn btn-sm btn-secondary">Cetak</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <span>Menampilkan 1-2 dari 2 data</span>
+        </div>
+        <div>
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#">Previous</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item disabled">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
